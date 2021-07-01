@@ -103,9 +103,10 @@ function chain(foodpref) {
   person
     .find({ favoriteFoods: foodpref })
     .sort({ name: -1 })
-    .limit(4)
+    .limit(2)
     .select({ name: true })
+    .exec()
     .then((result) => console.log(result))
     .catch((err) => console.log(err));
 }
-// chain("pizza");
+chain("pizza");
